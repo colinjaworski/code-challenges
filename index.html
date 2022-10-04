@@ -28,25 +28,26 @@
             let isLowerCase = false;
             let isNumber = false;
 
-            if (userId.length !== 6) {
-
-            } else {
-
+            if (userId.length === 6) {
                 length = true;
-                for (let i = 0; i < userId.length; i++) { // loops through ID input and checks for upper and lowercase letters and numbers
+                auth();
+            } else {
+                console.log('user name must be exactly 6 characters')
+            }
 
-                    if (!isNaN(userId[i])) {
-                        isNumber = true;
-                        console.log('isNumber?', isNumber)
-                    } else if (userId[i] === userId[i].toUpperCase()) {
-                        console.log('uppercase letter is: ', userId[i])
-                    }
+        }
+        function auth() {
+            length = true;
+            for (let i = 0; i < userId.length; i++) {
+
+                if (!isNaN(userId[i])) {
+                    isNumber = true;
+                    console.log('isNumber?', isNumber)
 
                 }
             }
             document.getElementById("userId").innerHTML = '';
-
-            console.log('length', length, 'number?', isNumber, 'upper case? ', isUpperCase, 'lowercase? ', isLowerCase)
+            console.log('length', length, 'number?', isNumber, 'upper case?', isUpperCase, 'lowercase?', isLowerCase)
         }
 
     </script>
