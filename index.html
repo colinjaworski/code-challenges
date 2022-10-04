@@ -19,16 +19,17 @@
     </div>
 
     <script>
+        
+        let length = false;
+        let isUpperCase = false;
+        let isLowerCase = false;
+        let isNumber = false;
+
         function handleSubmit() {
 
             let userId = document.getElementById("userId").value;
 
-            let length = false;
-            let isUpperCase = false;
-            let isLowerCase = false;
-            let isNumber = false;
-
-            if (userId.length === 6) {
+            if (userId.length >= 6) {
                 length = true;
                 auth();
             } else {
