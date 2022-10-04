@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        User Id:<input id="userId"><br>
+        <button id="submit" onClick="handleSubmit()">Accept</button>
+        <p id="userId"></p>
+        <p id="result"></p>
+
+
+    </div>
+
+    <script>
+        function handleSubmit() {
+
+            let userId = document.getElementById("userId").value;
+
+            let length = false;
+            let isUpperCase = false;
+            let isLowerCase = false;
+            let isNumber = false;
+
+            if (userId.length !== 6) {
+
+            } else {
+
+                length = true;
+                for (let i = 0; i < userId.length; i++) { // loops through ID input and checks for upper and lowercase letters and numbers
+
+                    if (!isNaN(userId[i])) {
+                        isNumber = true;
+                        console.log('isNumber?', isNumber)
+                    } else if (userId[i] === userId[i].toUpperCase()) {
+                        console.log('uppercase letter is: ', userId[i])
+                    }
+
+                }
+            }
+            document.getElementById("userId").innerHTML = '';
+
+            console.log('length', length, 'number?', isNumber, 'upper case? ', isUpperCase, 'lowercase? ', isLowerCase)
+        }
+
+    </script>
+</body>
+
+</html>
