@@ -19,7 +19,7 @@
     </div>
 
     <script>
-        
+
         let length = false;
         let isUpperCase = false;
         let isLowerCase = false;
@@ -27,25 +27,28 @@
 
         function handleSubmit() {
 
-            let userId = document.getElementById("userId").value;
+            const userId = document.getElementById("userId").value;
 
-            if (userId.length >= 6) {
+            if (userId.length > 6) {
                 length = true;
-                auth();
+                auth(userId);
             } else {
-                console.log('user name must be exactly 6 characters')
+                console.log('user name must be at least 6 characters')
             }
 
+
         }
-        function auth() {
-            length = true;
+        function auth(userId) {
+
             for (let i = 0; i < userId.length; i++) {
 
-                if (!isNaN(userId[i])) {
-                    isNumber = true;
-                    console.log('isNumber?', isNumber)
-
+                if (isNaN(userId[i])) {
+                    console.log('not a number')
+                } else isNumber = true;
+                if (userId[i] === userId[i].toUpperCase()) {
+                    isUpperCase = true;
                 }
+
             }
             document.getElementById("userId").innerHTML = '';
             console.log('length', length, 'number?', isNumber, 'upper case?', isUpperCase, 'lowercase?', isLowerCase)
